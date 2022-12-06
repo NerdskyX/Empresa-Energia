@@ -6,14 +6,24 @@ public class Endereco {
 	private int numero;
 	private String cidade;
 	private String estado;
+	private String CEP;
 	
-	public Endereco(String rua, int numero, String cidade, String estado) {
+	public Endereco(String rua, int numero, String cidade, String estado, String CEP) {
 		this.rua = rua;
 		this.cidade = cidade;
 		this.numero = numero;
 		this.estado = estado;
+		this.CEP = CEP;
 	}
 	
+	public String getCEP() {
+		return CEP;
+	}
+
+	public void setCEP(String cEP) {
+		CEP = cEP;
+	}
+
 	public String getRua() {
 		return rua;
 	}
@@ -46,13 +56,17 @@ public class Endereco {
 		this.estado = estado;
 	}
 	
-	public void Endereco(String rua, int numero, String cep, String cidade, String estado) {
-		System.out.println("Rua: " + rua);
-		System.out.println("Número: " + numero);
-		System.out.println("CEP: " + cep);
-		System.out.println("Cidade: " + cidade);
-		System.out.println("Estado: " + estado);
+	public String toString() {
+		String texto = "";
 		
+		texto = "-------------------------------------------"
+				+"\n Rua: " + getRua()
+				+"\n Numero: " + getNumero()
+				+"\n Cidade: " + getCidade()
+				+"\n Estado: " + getEstado()
+				+"\n CEP: " + getCEP();
+		
+		return texto;
 	}
 }
 
