@@ -16,7 +16,7 @@ public class PessoaFisica extends Cliente{
 		this.cpf = cpf;
 	}
 	
-	public void dadosPF() {
+	public void dados() {
 		this.dados();
 		System.out.println("cpf: " + cpf);
 	}
