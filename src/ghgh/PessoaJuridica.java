@@ -3,6 +3,7 @@ package ghgh;
 public class PessoaJuridica extends Cliente{
 	
 	private String cnpj;
+	private String nome1;
 	
 	public PessoaJuridica(Integer clienteId, String nome, String cnpj) {
 		super(clienteId, nome);

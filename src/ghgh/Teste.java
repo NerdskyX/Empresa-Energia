@@ -12,10 +12,15 @@ public class Teste {
 		int cont2 = 0;
 		int contEscolha = 0;
 		int contU;
-		int idPF = 0;
-		int[] id = new int[100];
-		String[] nome = new String[100];
-		String[] cpfCnpj = new String[100];
+		int id_PF = 0;
+		int[] idPF = new int[100];
+		String[] nomePF = new String[100];
+		String[] cpf = new String[100];
+		
+		int id_PJ = 0;
+		int[] idPJ = new int[100];
+		String[] nomePJ = new String[100];
+		String[] cnpj = new String[100];
 
 		while (cont != 1) {
 			cont2 = 0;
@@ -37,20 +42,20 @@ public class Teste {
 					contU = entrada.nextInt();
 					switch (contU) {
 					case 1:
-						idPF = idPF + 1;
-						id[idPF] = idPF;
+						id_PF = id_PF + 1;
+						idPF[id_PF] = id_PF;
 						System.out.println("Insira o nome: ");
-						nome[idPF] = entrada.next();
+						nomePF[id_PF] = entrada.next();
 						System.out.println("Insira o CPF: ");
-						cpfCnpj[idPF] = entrada.next();
+						cpf[id_PF] = entrada.next();
 						break;
 					case 2:
-						idPF = idPF + 1;
-						id[idPF] = idPF;
+						id_PJ = id_PJ + 1;
+						idPJ[id_PJ] = id_PJ;
 						System.out.println("Insira o nome: ");
-						nome[idPF] = entrada.next();
+						nomePJ[id_PJ] = entrada.next();
 						System.out.println("Insira o Cnpj: ");
-						cpfCnpj[idPF] = entrada.next();
+						cnpj[id_PJ] = entrada.next();
 						break;
 					case 3:
 						cont2 = 1;
