@@ -5,14 +5,14 @@ public class UC {
 	private int ucid;
 	private Cliente cliente;
 	private int leituraAnterior;
-	private int leituraAnual;
+	private int leituraAtual;
 	private Endereco endereco;
 	
-	public UC(int ucid, int leituraAnterior, int leituraAnual, Endereco endereco, Cliente cliente) {
+	public UC(int ucid, int leituraAnterior, int leituraAtual, Endereco endereco, Cliente cliente) {
 		this.ucid = ucid;
 		this.endereco = endereco;
 		this.leituraAnterior = leituraAnterior;
-		this.leituraAnual = leituraAnual;
+		this.leituraAtual = leituraAtual;
 		this.cliente = cliente;
 		
 	}
@@ -34,11 +34,11 @@ public class UC {
 	public void setLeituraAnterior(int leituraAnterior) {
 		this.leituraAnterior = leituraAnterior;
 	}
-	public int getLeituraAnual() {
-		return leituraAnual;
+	public int getLeituraAtual() {
+		return leituraAtual;
 	}
-	public void setLeituraAnual(int leituraAnual) {
-		this.leituraAnual = leituraAnual;
+	public void setLeituraAtual(int leituraAtual) {
+		this.leituraAtual = leituraAtual;
 	}
 	public Endereco getEndereco() {
 		return endereco;
@@ -53,16 +53,30 @@ public class UC {
 				+"\n UCID: " + getUcid()
 				+"\n Cliente: " + getCliente()
 				+"\n Leitura Anterior: " + getLeituraAnterior()
-				+"\n Leitura Atual: " + getLeituraAnual()
+				+"\n Leitura Atual: " + getLeituraAtual()
 				+"\n Endereço: " + getEndereco();
 		
 		return texto;
 	}
 	public int faturar(int leitura) {
-		leitura += leituraAnterior + leituraAnual;
-		return leitura;
+		
+		
+		int consumo;
+		int corrente = leitura;
+		
+		
+		leituraAnterior = leituraAtual;
+		leituraAtual = corrente;
+		consumo = leituraAtual - leituraAnterior;
+		
+		return consumo;
 		
 	}
 	
-	public 
+	public int pegarConsumo(int consumo) {
+		
+		consumo = leituraAtual - leituraAnterior;
+		
+		return consumo;
+	}
 }
