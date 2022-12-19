@@ -3,6 +3,7 @@ package ghgh;
 public class Cliente {
 	private int clienteId;
 	private String nome;
+	private Endereco end;
 	
 	public Cliente(Integer clienteId, String nome) {
 		this.clienteId = clienteId;
@@ -22,6 +23,14 @@ public class Cliente {
 		this.nome = nome;
 	}
 	
+	public Endereco getEnd() {
+		return end;
+	}
+
+	public void setEnd(Endereco end) {
+		this.end = end;
+	}
+
 	@Override
 	public String toString() {
 		return this.nome;

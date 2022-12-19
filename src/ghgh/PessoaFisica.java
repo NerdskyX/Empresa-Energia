@@ -5,7 +5,6 @@ public class PessoaFisica extends Cliente{
 	
 	public PessoaFisica(Integer clienteId, String nome, String cpf) {
 		super(clienteId, nome);
-		
 		this.cpf = cpf;
 	}
 

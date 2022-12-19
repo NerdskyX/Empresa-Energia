@@ -2,11 +2,9 @@ package ghgh;
 
 import java.util.Scanner;
 
-public class Teste {
+public class Main {
 
 	public static void main(String[] args) {
-		Cliente jorge = new Cliente(1, "Jorge");
-		PessoaFisica Igor = new PessoaFisica(2, "Igor", "565656");
 		Scanner entrada = new Scanner(System.in);
 		int cont = 0;
 		int cont2 = 0;
