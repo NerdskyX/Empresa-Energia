@@ -25,30 +25,32 @@ public class Main {
 		String cidade;
 		int leituraAnterior;
 		int leituraAtual;
-		  
+
 		while (cont != 1) {
 			cont2 = 0;
 			System.out.println("------------------------");
-			System.out.println("Escolha uma op√ß√£o: ");
+			System.out.println("Escolha uma opÁ„o: ");
 			System.out.println("1) Op√ß√µes de Cliente.");
-			System.out.println("2) Informa√ß√µes dos clientes.");
+			System.out.println("2) Exibir relatÛrios.");
 			System.out.println("3) Cadastrar Unidade Consumidora.");
 			System.out.println("4) Sair do Sistema.");
 			System.out.println("------------------------");
-			
+
 			contEscolha = entrada.nextInt();
-			
+
 			switch (contEscolha) {
+
 			case 1:
+
 				while (cont2 != 1) {
 					System.out.println("------------------------");
-					System.out.println("Escolha uma op√ß√£o: ");
+					System.out.println("Escolha uma opÁ„o: ");
 					System.out.println("1) Cadastrar Pessoa Fisica.");
 					System.out.println("2) Cadastrar Pessoa Juridica.");
 					System.out.println("3) Voltar");
 					System.out.println("------------------------");
 					contU = entrada.nextInt();
-					
+
 					switch (contU) {
 					case 1:
 						id_PF = id_PF + 1;
@@ -57,9 +59,9 @@ public class Main {
 						nomePF[id_PF] = entrada.next();
 						System.out.println("Insira o CPF: ");
 						cpf[id_PF] = entrada.next();
-						
+
 						break;
-						
+
 					case 2:
 						id_PJ = id_PJ + 1;
 						idPJ[id_PJ] = id_PJ;
@@ -67,79 +69,112 @@ public class Main {
 						nomePJ[id_PJ] = entrada.next();
 						System.out.println("Insira o Cnpj: ");
 						cnpj[id_PJ] = entrada.next();
-						
+
 						break;
-						
+
 					case 3:
 						cont2 = 1;
-						
+
 						break;
 					}
 				}
-				
+
 				break;
-				
+
 			case 2:
 				System.out.println("------------------------");
-				System.out.println("Escolha uma op√ß√£o: ");
-				System.out.println("1) Pessoa f√≠sica.");
-				System.out.println("2) Pessoa jur√≠dica.");
+				System.out.println("Escolha uma opÁ„o: ");
+				System.out.println("1) InformaÁıes dos clientes.");
+				System.out.println("2) Imprimir faturas.");
 				System.out.println("3) Voltar.");
 				System.out.println("------------------------");
-				
+
 				contEscolha = entrada.nextInt();
-				
+
 				switch (contEscolha) {
-				
+
 				case 1:
-					System.out.println("");
-					System.out.println("Pessoa F√≠sica");
-					
-					for(int i = 0; i < (id_PF + 1); i++) {
-						PessoaFisica pf = new PessoaFisica(idPF[i], nomePF[i], cpf[i]);
-						pf.dadosPF();
+					System.out.println("------------------------");
+					System.out.println("Escolha uma opÁ„o: ");
+					System.out.println("1) Pessoa fÌsica.");
+					System.out.println("2) Pessoa jurÌdica.");
+					System.out.println("3) Voltar.");
+					System.out.println("------------------------");
+
+					contEscolha = entrada.nextInt();
+
+					switch (contEscolha) {
+
+					case 1:
+						System.out.println("");
+						System.out.println("Pessoa Fisica");
+
+						for (int i = 0; i < (id_PF + 1); i++) {
+							PessoaFisica pf = new PessoaFisica(idPF[i], nomePF[i], cpf[i]);
+							pf.dadosPF();
+						}
+						break;
+
+					case 2:
+						System.out.println("");
+						System.out.println("Pessoa Juridica");
+
+						for (int i = 0; i < (id_PJ + 1); i++) {
+							PessoaJuridica pj = new PessoaJuridica(idPJ[i], nomePJ[i], cnpj[i]);
+							pj.dadosPJ();
+						}
+
+						break;
 					}
-					break;
-				
+
 				case 2:
-					System.out.println("");
-					System.out.println("Pessoa Jur√≠dica");
+					System.out.println("------------------------");
+					System.out.println("Escolha uma opÁ„o: ");
+					System.out.println("1) Pessoa fÌsica.");
+					System.out.println("2) Pessoa jurÌdica.");
+					System.out.println("3) Voltar.");
+					System.out.println("------------------------");
+
+					contEscolha = entrada.nextInt();
 					
-					for(int i = 0; i < (id_PJ + 1); i++) {
-						PessoaJuridica pj = new PessoaJuridica(idPJ[i], nomePJ[i], cnpj[i]);
-						pj.dadosPJ();
+					switch (contEscolha) {
+					case 1:
+						System.out.println("Pessoas fisicas");
+						
+						for(int i = 0; i < (id_PF + 1); i++) {
+							Fatura fpf = new Fatura(id[i], mesAno, unidadeConsumidora);
+						}
+						
+						break;
+					 case 2:
+						
+						 break;
 					}
-					break;	
-				
 			case 3:
 
-				while(contLeitura < 100 && limite != 0) {
-				
-				System.out.println("Entre com o ID da Unidade Consumidora: ");
-				ucid[contLeitura] = entrada.nextInt();
-				
-				System.out.println("Insira a leituraAnterior ");
-				leituraAnterior = entrada.nextInt();
-			   
-				System.out.println("Insira a leituraAtual: ");
-			    leituraAtual = entrada.nextInt();
-				
-				contLeitura++;
+				while (contLeitura < 100 && limite != 0) {
+
+					System.out.println("Entre com o ID da Unidade Consumidora: ");
+					ucid[contLeitura] = entrada.nextInt();
+
+					System.out.println("Insira a leituraAnterior ");
+					leituraAnterior = entrada.nextInt();
+
+					System.out.println("Insira a leituraAtual: ");
+					leituraAtual = entrada.nextInt();
+
+					contLeitura++;
 				}
-				 break;
-				}	
-					
+				break;
+
 			case 4:
 				cont = 1;
-				
+
+				System.out.println("voc√™ saiu do sistema");
+
 				break;
 			}
-				
-			break;
-			}
-		
-		
-		System.out.println("voc√™ saiu do sistema");
-
+		}
+	}
 	}
 }
