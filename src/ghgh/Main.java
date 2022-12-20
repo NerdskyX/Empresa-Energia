@@ -9,22 +9,23 @@ public class Main {
 		int cont = 0;
 		int cont2 = 0;
 		int contEscolha = 0;
-		int contU = 0;
+		int contU;
 		int id_PF = -1;
 		int[] idPF = new int[100];
 		String[] nomePF = new String[100];
 		String[] cpf = new String[100];
-		int uc;
-		int contLeitura = 0;
-		int limite;
 		int id_PJ = -1;
 		int[] idPJ = new int[100];
 		String[] nomePJ = new String[100];
 		String[] cnpj = new String[100];
+		int limite;
+		int j = 0;
+		String[] cidade = new String[100];
 		int[] ucid = new int[100];
-		String cidade;
-		int leituraAnterior;
-		int leituraAtual;
+		String[] nome = new String[100];
+		int[] idCliente = new int[100];
+		int[] leituraAnterior = new int[100];
+		int[] leituraAtual = new int[100];	
 
 		while (cont != 1) {
 			cont2 = 0;
@@ -152,18 +153,32 @@ public class Main {
 					}
 			case 3:
 
-				while (contLeitura < 100 && limite != 0) {
+				Scanner teclado = new Scanner(System.in);	
+				
 
-					System.out.println("Entre com o ID da Unidade Consumidora: ");
-					ucid[contLeitura] = entrada.nextInt();
-
-					System.out.println("Insira a leituraAnterior ");
-					leituraAnterior = entrada.nextInt();
-
-					System.out.println("Insira a leituraAtual: ");
-					leituraAtual = entrada.nextInt();
-
-					contLeitura++;
+				
+				while(j < 100 && limite !=4) {
+				System.out.println("Entre com o ID da Unidade Consumidora: ");
+				ucid[j] = teclado.nextInt();
+				
+				System.out.println("Entre com o id do cliente: ");
+				idCliente[j] = teclado.nextInt();
+				
+				
+				System.out.println("Entre com a Leitura Anterior: ");
+				leituraAnterior[j] = teclado.nextInt();
+				
+				System.out.println("Entre com a Leitura Atual: ");
+				leituraAtual[j] = teclado.nextInt();
+				
+				
+				System.out.println("Digite o valor da conta corrente: ");
+				Scanner valorLeitura = new Scanner(System.in);
+				
+				System.out.println("Se quiser que o looping acabe, digite 4: ");
+				limite = teclado.nextInt();
+				j++;
+				
 				}
 				break;
 
