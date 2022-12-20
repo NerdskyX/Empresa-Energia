@@ -9,17 +9,23 @@ public class Main {
 		int cont = 0;
 		int cont2 = 0;
 		int contEscolha = 0;
-		int contU;
+		int contU = 0;
 		int id_PF = -1;
 		int[] idPF = new int[100];
 		String[] nomePF = new String[100];
 		String[] cpf = new String[100];
-		
+		int uc;
+		int contLeitura = 0;
+		int limite;
 		int id_PJ = -1;
 		int[] idPJ = new int[100];
 		String[] nomePJ = new String[100];
 		String[] cnpj = new String[100];
-		
+		int[] ucid = new int[100];
+		String cidade;
+		int leituraAnterior;
+		int leituraAtual;
+		  
 		while (cont != 1) {
 			cont2 = 0;
 			System.out.println("------------------------");
@@ -77,7 +83,9 @@ public class Main {
 				System.out.println("Escolha uma opção: ");
 				System.out.println("1) Pessoa física.");
 				System.out.println("2) Pessoa jurídica.");
-				System.out.println("3) Voltar.");
+				System.out.println("3) Cadastrar Unidade Consumidora.");
+				System.out.println("4) Voltar.");
+				
 				System.out.println("------------------------");
 				
 				contEscolha = entrada.nextInt();
@@ -102,22 +110,44 @@ public class Main {
 					
 					for(int i = 0; i < (id_PJ + 1); i++) {
 						System.out.println("");
-						System.out.println("ID: " + idPJ[i]);
+						System.out.
+						println("ID: " + idPJ[i]);
 						System.out.println("Nome: " + nomePJ[i]);
 						System.out.println("CPF: " + cnpj[i]);
 					}
 					break;
 					
 				case 3:
+
+					
+					while(contLeitura < 100 && limite !=4) {
+					
+					System.out.println("Entre com o ID da Unidade Consumidora: ");
+					ucid[contLeitura] = entrada.nextInt();
+					
+					System.out.println("Insira a leituraAnterior ");
+					leituraAnterior = entrada.nextInt();
+				   
+					System.out.println("Insira a leituraAtual: ");
+				    leituraAtual = entrada.nextInt();
+					
+					
+					contLeitura++;
+					}
+					 break;
+					}
+				
+					
+				case 4:
 					break;
 				}
 				
 			break;
 			
-			case 3:
+			case 4:
 				cont = 1;
 			}
-		}
+		
 		
 		System.out.println("você saiu do sistema");
 
