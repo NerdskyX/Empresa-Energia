@@ -8,8 +8,10 @@ public class Fatura {
 	private int consumo;
 	private boolean pago;
 	
-	public Fatura() {
-		
+	public Fatura(int faturaId, int mesAno, UC unidadeConsumidora) {
+		this.faturaId = faturaId;
+		this.mesAno = mesAno;
+		this.unidadeConsumidora = unidadeConsumidora;
 	}
 
 	public int getFaturaId() {
@@ -65,11 +67,11 @@ public class Fatura {
 		
 		if(this.consumo < 500 && this.consumo > 0) {
 			valor = this.consumo * tarResidencial1 + icms + taxaIluminacaoPublica;
-		} else 
-		
-		
-		
-		
+		} else if(this.consumo > 500) {
+			valor = this.consumo * tarResidencial2 +icms + taxaIluminacaoPublica;
+		} else {
+			System.out.println("Valores Inválidos!!");
+		}	
 		
 		return valor;
 	}

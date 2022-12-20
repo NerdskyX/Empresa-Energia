@@ -32,7 +32,8 @@ public class Main {
 			System.out.println("Escolha uma opção: ");
 			System.out.println("1) Opções de Cliente.");
 			System.out.println("2) Informações dos clientes.");
-			System.out.println("3) Sair do Sistema.");
+			System.out.println("3) Cadastrar Unidade Consumidora.");
+			System.out.println("4) Sair do Sistema.");
 			System.out.println("------------------------");
 			
 			contEscolha = entrada.nextInt();
@@ -83,9 +84,7 @@ public class Main {
 				System.out.println("Escolha uma opção: ");
 				System.out.println("1) Pessoa física.");
 				System.out.println("2) Pessoa jurídica.");
-				System.out.println("3) Cadastrar Unidade Consumidora.");
-				System.out.println("4) Voltar.");
-				
+				System.out.println("3) Voltar.");
 				System.out.println("------------------------");
 				
 				contEscolha = entrada.nextInt();
@@ -97,10 +96,8 @@ public class Main {
 					System.out.println("Pessoa Física");
 					
 					for(int i = 0; i < (id_PF + 1); i++) {
-						System.out.println("");
-						System.out.println("ID: " + idPF[i]);
-						System.out.println("Nome: " + nomePF[i]);
-						System.out.println("CPF: " + cpf[i]);
+						PessoaFisica pf = new PessoaFisica(idPF[i], nomePF[i], cpf[i]);
+						pf.dadosPF();
 					}
 					break;
 				
@@ -109,43 +106,36 @@ public class Main {
 					System.out.println("Pessoa Jurídica");
 					
 					for(int i = 0; i < (id_PJ + 1); i++) {
-						System.out.println("");
-						System.out.
-						println("ID: " + idPJ[i]);
-						System.out.println("Nome: " + nomePJ[i]);
-						System.out.println("CPF: " + cnpj[i]);
+						PessoaJuridica pj = new PessoaJuridica(idPJ[i], nomePJ[i], cnpj[i]);
+						pj.dadosPJ();
 					}
-					break;
-					
-				case 3:
+					break;	
+				
+			case 3:
 
-					
-					while(contLeitura < 100 && limite !=4) {
-					
-					System.out.println("Entre com o ID da Unidade Consumidora: ");
-					ucid[contLeitura] = entrada.nextInt();
-					
-					System.out.println("Insira a leituraAnterior ");
-					leituraAnterior = entrada.nextInt();
-				   
-					System.out.println("Insira a leituraAtual: ");
-				    leituraAtual = entrada.nextInt();
-					
-					a
-					contLeitura++;
-					}
-					 break;
-					}
+				while(contLeitura < 100 && limite != 0) {
 				
-					
-				case 4:
-					break;
+				System.out.println("Entre com o ID da Unidade Consumidora: ");
+				ucid[contLeitura] = entrada.nextInt();
+				
+				System.out.println("Insira a leituraAnterior ");
+				leituraAnterior = entrada.nextInt();
+			   
+				System.out.println("Insira a leituraAtual: ");
+			    leituraAtual = entrada.nextInt();
+				
+				contLeitura++;
 				}
-				
-			break;
-			
+				 break;
+				}	
+					
 			case 4:
 				cont = 1;
+				
+				break;
+			}
+				
+			break;
 			}
 		
 		
