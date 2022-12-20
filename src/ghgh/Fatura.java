@@ -40,8 +40,6 @@ public class Fatura {
 		this.consumo = consumo;
 	}
 
-
-
 	public boolean isPago() {
 		return pago;
 	}
@@ -52,6 +50,14 @@ public class Fatura {
 
 	public double calcularValorFatura() {
 		double valor = 0;
+		double tarResidencial1 = 0.38790;
+		double tarResidencia2 = 0.04500;
+		double tarComercial1 = 0.42550;
+		double tarComercial2 = 0.45113;
+		double icms = 27;
+		double taxaIluminacaoPublica = 7.8;
+		
+		
 		
 		return valor;
 	}

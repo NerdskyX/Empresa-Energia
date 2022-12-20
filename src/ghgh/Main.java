@@ -20,23 +20,11 @@ public class Main {
 		String[] nomePJ = new String[100];
 		String[] cnpj = new String[100];
 		
-		String nome = "";
-		String cidade = "";
-		String estado = "";
-		String rua = "";
-		String cep = "";
-		int numCasa = 0;
-		int idCliente = 0;
-
-		UC[] uc = new UC[100];
-		Cliente cliente = new Cliente(idCliente, nomePF[]);
-		Endereco endereco = new Endereco(rua, numCasa, cidade, estado, cep);
-		
 		while (cont != 1) {
 			cont2 = 0;
 			System.out.println("------------------------");
-			System.out.println("Escolha uma op��o: ");
-			System.out.println("1) Op��es de Cliente.");
+			System.out.println("Escolha uma opção: ");
+			System.out.println("1) Opções de Cliente.");
 			System.out.println("2) Informações dos clientes.");
 			System.out.println("3) Sair do Sistema.");
 			System.out.println("------------------------");
@@ -47,7 +35,7 @@ public class Main {
 			case 1:
 				while (cont2 != 1) {
 					System.out.println("------------------------");
-					System.out.println("Escolha uma op��o: ");
+					System.out.println("Escolha uma opção: ");
 					System.out.println("1) Cadastrar Pessoa Fisica.");
 					System.out.println("2) Cadastrar Pessoa Juridica.");
 					System.out.println("3) Voltar");
@@ -85,19 +73,53 @@ public class Main {
 				break;
 				
 			case 2:
-				System.out.println("Pessoa Física");
+				System.out.println("------------------------");
+				System.out.println("Escolha uma opção: ");
+				System.out.println("1) Pessoa física.");
+				System.out.println("2) Pessoa jurídica.");
+				System.out.println("3) Voltar.");
+				System.out.println("------------------------");
 				
-				for(int i = 0; i < )
+				contEscolha = entrada.nextInt();
 				
-				break;
+				switch (contEscolha) {
 				
+				case 1:
+					System.out.println("");
+					System.out.println("Pessoa Física");
+					
+					for(int i = 0; i < (id_PF + 1); i++) {
+						System.out.println("");
+						System.out.println("ID: " + idPF[i]);
+						System.out.println("Nome: " + nomePF[i]);
+						System.out.println("CPF: " + cpf[i]);
+					}
+					break;
+				
+				case 2:
+					System.out.println("");
+					System.out.println("Pessoa Jurídica");
+					
+					for(int i = 0; i < (id_PJ + 1); i++) {
+						System.out.println("");
+						System.out.println("ID: " + idPJ[i]);
+						System.out.println("Nome: " + nomePJ[i]);
+						System.out.println("CPF: " + cnpj[i]);
+					}
+					break;
+					
+				case 3:
+					break;
+				}
+				
+			break;
+			
 			case 3:
 				cont = 1;
 			}
 		}
 		
-		System.out.println("voc~e saiu do sistema");
+		System.out.println("você saiu do sistema");
 
 	}
-
 }
