@@ -18,7 +18,7 @@ public class PessoaJuridica extends Cliente{
 		this.cnpj = cnpj;
 	}
 	
-	public void dados() {
+	public void dadosPJ() {
 		this.dados();
 		System.out.println("cnpj: " + cnpj);
 	}
