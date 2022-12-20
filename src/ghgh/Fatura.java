@@ -7,6 +7,10 @@ public class Fatura {
 	private UC unidadeConsumidora;
 	private int consumo;
 	private boolean pago;
+	
+	public Fatura() {
+		
+	}
 
 	public int getFaturaId() {
 		return faturaId;
@@ -51,11 +55,19 @@ public class Fatura {
 	public double calcularValorFatura() {
 		double valor = 0;
 		double tarResidencial1 = 0.38790;
-		double tarResidencia2 = 0.04500;
+		double tarResidencial2 = 0.04500;
 		double tarComercial1 = 0.42550;
 		double tarComercial2 = 0.45113;
 		double icms = 27;
 		double taxaIluminacaoPublica = 7.8;
+		
+		this.consumo = this.unidadeConsumidora.getLeituraAtual() - this.unidadeConsumidora.getLeituraAnterior();
+		
+		if(this.consumo < 500 && this.consumo > 0) {
+			valor = this.consumo * tarResidencial1 + icms + taxaIluminacaoPublica;
+		} else 
+		
+		
 		
 		
 		
