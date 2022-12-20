@@ -131,7 +131,7 @@ public class Main {
 					System.out.println("Insira a leituraAtual: ");
 				    leituraAtual = entrada.nextInt();
 					
-					
+					a
 					contLeitura++;
 					}
 					 break;
